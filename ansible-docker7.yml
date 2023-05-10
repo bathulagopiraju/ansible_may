@@ -1,0 +1,17 @@
+---
+- name: Login into docker registry and upload a docker image
+  hosts: 172.31.1.36
+  tasks:
+    - name: Login into docker hub
+      docker_login:
+        username: gopiraju2bathula
+        password: Gopiraju246@
+    - name: Push the customised docker image
+      docker_image:
+        name: gopiraju2bathula/jenkins
+        push: true
+        source: pull
+
+...          
+           
+
